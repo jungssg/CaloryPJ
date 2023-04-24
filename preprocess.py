@@ -1,7 +1,6 @@
 import pandas as pd
 PATH = ('C:\\Workspace\\CaloryPJ\\datas\\open\\train.csv')
 data = pd.read_csv(PATH)
-#data.isna().sum() #Missing Values check
 
 data.drop_duplicates(inplace=True) # Duplicates removed 
 data.dropna(axis=0, inplace=True) # Missing Values removed
@@ -27,7 +26,7 @@ from sklearn.linear_model import LinearRegression
 model = LinearRegression()
 model.fit(X_train, y_train)
 
-pred = model.predict(X_test) #위 트레인한 값으로 X_test 예측하여 확인
+pred = model.predict(X_test) #위 트레인한 값으로 X_test 
 
 from sklearn.metrics import r2_score #결정계수
 r2_score(y_test, pred)
